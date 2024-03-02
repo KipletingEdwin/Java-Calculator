@@ -21,6 +21,7 @@ public class Main implements ActionListener {
         frame.setSize(420, 550);
         frame.setLayout(null);
 
+
         textfield = new JTextField();
         textfield.setBounds(50, 25, 300, 50);
         textfield.setFont(myFont);
@@ -44,7 +45,24 @@ public class Main implements ActionListener {
         functionButtons[6] = delButton;
         functionButtons[7] = clrButton;
 
+        for(int i=0; i<8; i++){
+            functionButtons[i].addActionListener(this);
+            functionButtons[i].setFont(myFont);
+            functionButtons[i].setFocusable(false);
+        }
 
+        for(int i=0; i<10; i++){
+            numberButtons[i] = new JButton(String.valueOf(i));
+            numberButtons[i].addActionListener(this);
+            numberButtons[i].setFont(myFont);
+            numberButtons[i].setFocusable(false);
+        }
+
+        delButton.setBounds(50,430,145,50);
+        clrButton.setBounds(205,430,145,50);
+
+        frame.add(delButton);
+        frame.add(clrButton);
         frame.add(textfield);
         frame.setVisible(true);
     }
